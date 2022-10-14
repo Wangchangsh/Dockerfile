@@ -17,6 +17,7 @@ RUN apt-get -y update \
     && apt-get install -y libsqlite3-dev \
     && apt-get install -y libbz2-dev \
     && apt-get install -y git \
+    && apt-get install -y gawk \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget --output-document blast.tar.gz https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.13.0+-x64-linux.tar.gz \
