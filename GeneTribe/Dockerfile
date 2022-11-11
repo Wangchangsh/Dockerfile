@@ -10,7 +10,6 @@ RUN apt-get -y update \
     && apt-get install -y wget \
     && apt-get install -y gawk \
     && apt-get install -y build-essential \
-    && apt-get install -y python3-dev \
     && apt-get install -y texlive \
     && apt-get install -y texlive-latex-recommended \
     && apt-get install -y texlive-latex-extra \
@@ -20,10 +19,10 @@ RUN apt-get -y update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh \
-    && sh Miniconda3-py37_4.12.0-Linux-x86_64.sh -b \
+    && sh Miniconda3-py37_4.12.0-Linux-x86_64.sh -b -p /opt/miniconda3 \
     && rm -rf Miniconda3-py37_4.12.0-Linux-x86_64.sh
 
-ENV PATH=/root/miniconda3/bin:$PATH
+ENV PATH=/opt/miniconda3/bin:$PATH
 
 RUN conda install -y blast==2.9.0 -c bioconda
 RUN conda install -y bedtools==2.29.2 -c bioconda
