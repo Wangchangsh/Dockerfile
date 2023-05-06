@@ -12,4 +12,4 @@ RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py \
 
 RUN pip2 install numpy
 RUN pip2 install matplotlib
-
+RUN pip2 install pillow
